@@ -3,59 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Name</title>
+    <title>Emad Shanab - أبو عبد الله</title>
     <style>
         body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #container {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
         }
 
-        #animatedName {
-            font-family: 'Arial', sans-serif;
+        h1 {
+            color: #333;
             font-size: 2em;
-            color: #3498db;
-            text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid #3498db;
-            animation: typeWriter 1s steps(20) 1s forwards, blinkCursor 0.5s step-end infinite alternate;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            animation: fadeInUp 1.5s ease-out;
         }
 
-        @keyframes typeWriter {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 10px;
+            padding: 5px;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s ease-in-out;
         }
 
-        @keyframes blinkCursor {
-            to {
-                border-right-color: transparent;
+        a:hover {
+            border-bottom: 2px solid #007BFF;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
-    <div id="animatedName">Emad Shanab</div>
 
-    <script>
-        // You can customize the name or add more animations if needed
-        // For example, you can change the animation duration or delay
+<div id="container">
+    <h1>Your Name</h1>
+    <a href="https://twitter.com/Alra3ees" target="_blank">Twitter</a>
+    <a href="https://hackerone.com/egyptghost1" target="_blank">HackerOne</a>
+    <a href="https://bugcrowd.com/egyptghost" target="_blank">Bugcrowd</a>
+</div>
 
-        // Wait for the DOM to be ready
-        document.addEventListener('DOMContentLoaded', function() {
-            // Your name
-            var name = "Emad Shanab";
-
-            // Set the innerHTML of the animatedName div to the name
-            document.getElementById('animatedName').innerHTML = name;
-        });
-    </script>
 </body>
 </html>
